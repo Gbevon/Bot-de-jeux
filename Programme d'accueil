@@ -1,0 +1,28 @@
+import tkinter as tk
+from PIL import Image, ImageTk
+import webbrowser
+
+# Créer un fenêtre
+window = tk.Tk()
+window.title("Bienvenue")
+
+# Charger l'image
+image = Image.open("f22b3fe1e9435ef09ce87c175c243e89.jpg")
+photo = ImageTk.PhotoImage(image)
+
+# Afficher l'image
+label = tk.Label(window, image=photo)
+label.pack()
+
+# Demander le pseudonyme et l'âge
+username = input("Entrez votre pseudonyme : ")
+age = input("Entrez votre âge : ")
+
+# Ouvrir le lien GitHub
+def open_github():
+    webbrowser.open("https://github.com/Gbevon/Bot-de-jeux.git")
+
+btn = tk.Button(window, text="Ouvrir GitHub", command=open_github)
+btn.pack()
+
+window.mainloop()
